@@ -1,12 +1,20 @@
 import Header from '../../Components/UI/Header'
 import competitionData from './Components/competitionData'
 import CompetitionsCard from './Components/CompetitionsCard'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import {useEffect} from 'react'
 const Competition = () => {
+	useEffect(() => {
+        AOS.init();
+      }, [])
 	return (
-		<>
-			<Header title1="Compe" title2="titions" description="" />
+		<div data-aos='fade-up'>
+			<Header title1="Compe" title2="titions" description="
+I've secured victories both as an individual and within a team of friends in various competitive arenas. These successes stand as a testament to my ability to excel both independently and collaboratively." />
 			<div className="flex flex-wrap gap-5 mx-5 justify-center">
-				{competitionData.map((comp) => (
+				<p className='text-forth my-20'>Winning Soon!</p>
+				{/*{competitionData.map((comp) => (
 					<CompetitionsCard
 						name={comp.name}
 						rank={comp.rank}
@@ -17,9 +25,9 @@ const Competition = () => {
 						category={comp.category}
 						certificate={comp.certificate}
 					/>
-				))}
+				))}*/}
 			</div>
-		</>
+		</div>
 	)
 }
 

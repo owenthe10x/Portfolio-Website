@@ -1,6 +1,6 @@
 const HobbyCard = (props) => {
     const defaultImgStyles =
-		'aspect-video object-cover rounded-xl h-40 mx-auto md:w-[100%] md:h-auto'
+		'aspect-video object-cover rounded-xl h-40 mx-auto md:w-[100%] md:h-auto mb-5 md:mb-0'
 	const imgStyles = props.customImgStyles
 		? `${defaultImgStyles} ${props.customImgStyles}`
 		: defaultImgStyles

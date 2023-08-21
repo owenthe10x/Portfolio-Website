@@ -1,12 +1,9 @@
 import {NavLink} from 'react-router-dom'
 import {useState} from 'react'
-import home from '../../Assets/Icons/home.png'
-import about from '../../Assets/Icons/about.png'
-import competitions from '../../Assets/Icons/competitions.png'
-import skills from '../../Assets/Icons/skills.png'
-import projects from '../../Assets/Icons/projects.png'
-import experiences from '../../Assets/Icons/experiences.png'
-import sword from '../../Assets/Icons/sword.png'
+
+import menuIcon from '../../Assets/Icons/menu.svg'
+import closeIcon from '../../Assets/Icons/close.svg'
+
 const Navbar = () => {
 	const [menu, setMenu] = useState(false)
 	const openMenu = () => {
@@ -18,43 +15,144 @@ const Navbar = () => {
 	return (
 		<>
 			<button
-				className="fixed top-1/2 -right-[20px] -translate-y-1/2 p-3 rounded-full bg-forth w-fit rotate-[270deg]"
+				className="fixed top-5 right-5 p-3 rounded-full bg-forth w-fit lg:hidden"
 				onClick={openMenu}
 			>
-				<img src={sword} alt="" className="w-8 rotate-[315deg]" />
+				<img src={menuIcon} alt="" className="w-5" />
 			</button>
+			<ul className="hidden fixed top-10 lg:flex justify-center gap-x-20 gap-y-6 left-1/2 -translate-x-1/2 ">
+				<NavLink
+					to="/"
+					className={({isActive}) =>
+						isActive
+							? 'py-1 px-3 text-xl bg-fifth rounded-xl shadow-fifth shadow-md'
+							: 'py-1 px-3 text-xl bg-forth rounded-xl shadow-white shadow-md'
+					}
+					onClick={closeMenu}
+					end
+				>
+					home.
+				</NavLink>
+				<NavLink
+					to="/about"
+					className={({isActive}) =>
+						isActive
+							? 'py-1 px-3 text-xl bg-fifth rounded-xl shadow-fifth shadow-md'
+							: 'py-1 px-3 text-xl bg-forth rounded-xl shadow-white shadow-md'
+					}
+					onClick={closeMenu}
+					end
+				>
+					about.
+				</NavLink>
+				<NavLink
+					to="/skills"
+					className={({isActive}) =>
+						isActive
+							? 'py-1 px-3 text-xl bg-fifth rounded-xl shadow-fifth shadow-md'
+							: 'py-1 px-3 text-xl bg-forth rounded-xl shadow-white shadow-md'
+					}
+					onClick={closeMenu}
+					end
+				>
+					skills.
+				</NavLink>
+				<NavLink
+					to="/experiences"
+					className={({isActive}) =>
+						isActive
+							? 'py-1 px-3 text-xl bg-fifth rounded-xl shadow-fifth shadow-md'
+							: 'py-1 px-3 text-xl bg-forth rounded-xl shadow-white shadow-md'
+					}
+					onClick={closeMenu}
+					end
+				>
+					experiences.
+				</NavLink>
+				<NavLink
+					to="/projects"
+					className={({isActive}) =>
+						isActive
+							? 'py-1 px-3 text-xl bg-fifth rounded-xl shadow-fifth shadow-md'
+							: 'py-1 px-3 text-xl bg-forth rounded-xl shadow-white shadow-md'
+					}
+					onClick={closeMenu}
+					end
+				>
+					projects.
+				</NavLink>
+				<NavLink
+					to="/competitions"
+					className={({isActive}) =>
+						isActive
+							? 'py-1 px-3 text-xl bg-fifth rounded-xl shadow-fifth shadow-md'
+							: 'py-1 px-3 text-xl bg-forth rounded-xl shadow-white shadow-md'
+					}
+					onClick={closeMenu}
+					end
+				>
+					competitions.
+				</NavLink>
+			</ul>
 			{menu && (
-				<nav className="transition-transform duration-300 ease-in-out transform bg-second rounded-l-xl fixed top-1/2 right-0 p-10 -translate-y-1/2 ">
+				<nav
+					onClick={closeMenu}
+					className="bg-black bg-opacity-80 w-screen min-h-screen transition-transform duration-300 ease-in-out transform rounded-l-xl fixed top-1/2 right-0 p-10 -translate-y-1/2 "
+				>
 					<button
-						className="fixed -left-[25px] top-1/2 -translate-y-1/2 p-3 rounded-full bg-forth w-fit rotate-[90deg]"
+						className="fixed right-5 top-5 p-3 rounded-full bg-forth w-fit"
 						onClick={closeMenu}
 					>
-						<img src={sword} alt="" className="w-8 rotate-[315deg]" />
+						<img src={closeIcon} alt="" className="w-5" />
 					</button>
-					<ul className="text-white justify-self-center">
-						<NavLink to="/" className="p-2 flex items-center text-xl" end>
-							<img src={home} alt="" className="h-7 mr-4" />
-							Home
+					<ul className="flex flex-wrap justify-center gap-x-20 gap-y-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+						<NavLink
+							to="/"
+							className="py-1 px-3 text-xl bg-forth rounded-xl "
+							onClick={closeMenu}
+							end
+						>
+							home.
 						</NavLink>
-						<NavLink to="/about" className="p-2 flex items-center text-xl " end>
-							<img src={about} alt="" className="h-7 mr-4" />
-							About
+						<NavLink
+							to="/about"
+							className="py-1 px-3 text-xl bg-forth rounded-xl  "
+							onClick={closeMenu}
+							end
+						>
+							about.
 						</NavLink>
-						<NavLink to="/skills" className="p-2 flex items-center text-xl " end>
-							<img src={skills} alt="" className="h-7 mr-4" />
-							Skills
+						<NavLink
+							to="/skills"
+							className="py-1 px-3 text-xl bg-forth rounded-xl  "
+							onClick={closeMenu}
+							end
+						>
+							skills.
 						</NavLink>
-						<NavLink to="/experiences" className="p-2 flex items-center text-xl " end>
-							<img src={experiences} alt="" className="h-7 mr-4" />
-							Experiences
+						<NavLink
+							to="/experiences"
+							className="py-1 px-3 text-xl bg-forth rounded-xl  "
+							onClick={closeMenu}
+							end
+						>
+							experiences.
 						</NavLink>
-						<NavLink to="/projects" className="p-2 flex items-center text-xl " end>
-							<img src={projects} alt="" className="h-7 mr-4" />
-							Projects
+						<NavLink
+							to="/projects"
+							className="py-1 px-3 text-xl bg-forth rounded-xl  "
+							onClick={closeMenu}
+							end
+						>
+							projects.
 						</NavLink>
-						<NavLink to="/competitions" className="p-2 flex items-center text-xl " end>
-							<img src={competitions} alt="" className="h-7 mr-4" />
-							Competitions
+						<NavLink
+							to="/competitions"
+							className="py-1 px-3 text-xl bg-forth rounded-xl  "
+							onClick={closeMenu}
+							end
+						>
+							competitions.
 						</NavLink>
 					</ul>
 				</nav>

@@ -4,23 +4,27 @@ import futsal from '../../Assets/Images/futsal.jpg'
 import makrab from '../../Assets/Images/makrab.jpg'
 import jalan from '../../Assets/Images/jalan.jpg'
 import masak from '../../Assets/Images/masak.jpg'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import {useEffect} from 'react'
 const About = () => {
+	useEffect(() => {
+		AOS.init()
+	}, [])
 	return (
-		<>
-			<Header title1="Ab" title2="out" description="Details about me." />
-			<p className="text-forth text-justify">
-				Owen Tobias Sinurat, Owen for short, an ambitious man born in 2003, and
-				is now studying Informatics Engineering at
-				<span className="text-fifth"> Bandung Institute of Technology.</span>
-			</p>
+		<div data-aos="fade-up">
+			<Header
+				title1="Ab"
+				title2="out"
+				description="Owen Tobias Sinurat, Owen for short, an individual fueled by ambition, I consistently give my all, pouring in 110% effort into everything I do. Renowned for my sense of responsibility and insatiable curiosity, I envision a future where financial freedom is my reality by the age of 30."
+			/>
 			<h2 className="text-center text-forth  font-guminert font-bold">
 				I have a few hobbies
 			</h2>
 			<section className="">
 				<HobbyCard
-					name="Suiiiiiiiiiii"
-					desc="I've fallen in love with football. My dream was to become a soccer player, but now, there's nothing wrong with being a programmer who is good at playing soccer hahaha. That was when i compete against other faculty in ITB at the TPB Cup event."
+					name="SUUUUUIIIIIII"
+					desc="Although I play several other sports, I've fallen in love with football. My dream was to become a football player, but now, there's nothing wrong with being a programmer who is good at playing football hahaha. The photo was when i compete against other faculty in ITB at the TPB Cup event."
 					image={futsal}
 				/>
 				<HobbyCard
@@ -36,12 +40,12 @@ const About = () => {
 				/>
 				<HobbyCard
 					name="Let him cook!"
-					desc="I am always amazed by the work produced by a chef, because when it comes to cooking food, taste isn't the only thing that is considered. Visuals, texture, smell, nutrition, and even the weather should be considered when making someone a meal. This was one of my masterpieces with a limited budget :D"
+					desc="I am always amazed by the work produced by a chef, because when it comes to cooking food, taste isn't the only thing that is considered. Visuals, texture, smell, nutrition, and even the weather should be considered when making someone a meal. The photo was one of my masterpieces with a limited budget :D"
 					image={masak}
 					customImgStyles="order-last "
 				/>
 			</section>
-		</>
+		</div>
 	)
 }
 

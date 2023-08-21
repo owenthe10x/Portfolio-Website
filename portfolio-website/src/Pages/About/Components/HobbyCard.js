@@ -13,7 +13,7 @@ const HobbyCard = (props) => {
 			/>
 			<section className="text-justify md:px-5 my-auto">
 				<h2 className="font-kollektifBoldItalic text-3xl text-center">{props.name}</h2>
-				<p>{props.desc}</p>
+				<p className="font-kollektif">{props.desc}</p>
 			</section>
 		</section>
 	)

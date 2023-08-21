@@ -14,8 +14,8 @@ const Homepage = () => {
 						<span className="text-fifth">OWEN</span> TOBIAS SINURAT
 					</h1>
 					<p className="font-kollektif text-xl">
-						a 20-year-old Informatics undergraduate from
-						<span className="text-fifth">Bandung Institute of Technology </span>
+						a 20-year-old Informatics undergraduate from 
+						<span className="text-fifth">{' '}Bandung Institute of Technology </span>
 						with a dynamic blend of passions in technology, sports, and finance.
 					</p>
 				</section>

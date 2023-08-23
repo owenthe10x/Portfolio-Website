@@ -19,12 +19,20 @@ const ProjectsCard = (props) => {
 					</section>
 				</section>
 				<section className="self-center min-w-fit ">
-					<a href={props.link}>
-						<img src={github} alt="github" className="h-10 m-2 mr-0" />
-					</a>
-					<a href={props.repository}>
-						<img src={link} alt="website" className="h-9 m-2 mr-0" />
-					</a>
+					{props.link != '' ? (
+						<a href={props.link} target='_blank'>
+							<img src={link} alt="github" className="h-10 m-2 mr-0" />
+						</a>
+					) : (
+						<></>
+					)}
+					{props.repository != '' ? (
+						<a href={props.repository} target='_blank'>
+							<img src={github} alt="website" className="h-9 m-2 mr-0" />
+						</a>
+					) : (
+						<></>
+					)}
 				</section>
 			</section>
 		</div>

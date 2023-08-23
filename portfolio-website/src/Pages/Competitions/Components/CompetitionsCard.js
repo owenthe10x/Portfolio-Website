@@ -21,9 +21,13 @@ const CompetitionsCard = (props) => {
 			</section>
 			<section className="border-t self-center flex justify-between pt-2">
 				<p>{props.scale}</p>
-				<a href={props.certificate}>
-					<img src={certificate} alt="certificate" className="h-8" />
-				</a>
+				{props.certificate != '' ? (
+					<a href={props.certificate}>
+						<img src={certificate} alt="certificate" className="h-8" />
+					</a>
+				) : (
+					<></>
+				)}
 			</section>
 		</div>
 	)
